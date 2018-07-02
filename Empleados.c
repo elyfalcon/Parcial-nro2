@@ -258,23 +258,20 @@ int CalcularSalary(eEmpleado* element)
         if(element->horas <=120)
         {
             Empleado_setSueldo(element,(element->horas)*180);
-            cont++;
+
         }
         if(element->horas > 120 && element->horas <= 160)
         {
            Empleado_setSueldo(element,(element->horas)*240);
-            cont++;
+
         }
         if(element->horas > 160 && element->horas <=240)
         {
-            Empleado_setSueldo(element,(element->horas)*350);
-            cont++;
+          Empleado_setSueldo(element,(element->horas)*350);
+
         }
     }//fin if(element !=)
 
-    if(cont==10)
-        retorno=1;
-    else
-        retorno=0;
+
  return retorno;
 }

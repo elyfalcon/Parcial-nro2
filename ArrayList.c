@@ -661,7 +661,7 @@ int contract(ArrayList* this,int index)
 
     return returnAux;
 }
-ArrayList* al_map(ArrayList *this, int (*funcion)(void*))
+/*ArrayList* al_map(ArrayList *this, int (*funcion)(void*))
 {
     int retorno=-1;
     ArrayList* ListaAuxiliar;
@@ -682,4 +682,33 @@ ArrayList* al_map(ArrayList *this, int (*funcion)(void*))
 
     }//fin if(lista!=NULL)
     return ListaAuxiliar;
+}*/
+
+int al_map(ArrayList *this, int (*funcion)(void*))
+{
+    int retorno=-1;
+   // ArrayList* ListaAuxiliar;
+  //  ListaAuxiliar=al_newArrayList();
+    int cont=0;
+    int i;
+    if(this !=NULL)
+    {
+        retorno=0;
+        for(i=0;i<this->len(this);i++)
+        {
+          if(funcion(this->get(this,i))==1);//se lo paso a la funcion
+            {
+                cont++;
+                //ListaAuxiliar->add(this,this->get(this,i));
+                //ListaAuxiliar=al_add(this,this->get(this,i));
+            }//fin if
+
+        }//fin for
+
+    }//fin if(lista!=NULL)
+    if(cont==al_len(this))
+    {
+        retorno=1;
+    }
+    return retorno;
 }

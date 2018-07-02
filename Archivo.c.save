@@ -122,15 +122,15 @@ int GuardarArchivoT(ArrayList* this, const char* nombre)
             {
                 if(aux !=NULL)
                 {
-                    int tamanio;
-                    tamanio=al_len(this);
-                    for (i=0; i<tamanio; i++)
-                    {
+                int tamanio;
+                tamanio=al_len(this);
+                for (i=0; i<tamanio; i++)
+                {
                     aux = (eEmpleado*)al_get(this, i);
                     fprintf(f,"%d,%s,%s,%d,%d\n",get_id(aux),get_Nombre(aux),get_dire(aux),get_horas(aux),get_sueldo(aux));
                     retorno=1;
-                    }//fin for
-                    }//fin if(aux!=NULL)
+                }//fin for
+                }//fin if(aux!=NULL)
                 fclose(f);
             }//fin else
         }// fin if(!=null)
