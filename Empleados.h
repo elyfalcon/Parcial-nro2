@@ -16,6 +16,7 @@ int ComparaNombre(void* eEmpleadoA,void* eEmpleadoB);
 ArrayList* ListarPorNombre(ArrayList *this,int orden);
 void MostrarElementos(ArrayList *this,int desde, int hasta);
 int CalculaSalario(ArrayList *this);
+int CalcularSalary(eEmpleado* element);
 
 
 

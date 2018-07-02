@@ -43,3 +43,47 @@
 	<stdlib.h>
 	"ArrayList.h"
 
+1530564165 source:c:\eli\utn\examen\parcial-nro2\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1530563215 c:\eli\utn\examen\parcial-nro2\arraylist.h
+
+1530564363 source:c:\eli\utn\examen\parcial-nro2\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Archivo.h"
+	"Empleados.h"
+
+1530563215 c:\eli\utn\examen\parcial-nro2\tools.h
+
+1530563215 c:\eli\utn\examen\parcial-nro2\archivo.h
+
+1530564425 c:\eli\utn\examen\parcial-nro2\empleados.h
+
+1530563215 source:c:\eli\utn\examen\parcial-nro2\tools.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+
+1530563929 source:c:\eli\utn\examen\parcial-nro2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Empleados.h"
+	"Archivos.h"
+
+1530563215 c:\eli\utn\examen\parcial-nro2\archivos.h
+
+1530563215 source:c:\eli\utn\examen\parcial-nro2\archivo.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"tools.h"
+	"Empleados.h"
+

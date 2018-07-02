@@ -4,7 +4,6 @@
 #include "tools.h"
 #include "Empleados.h"
 #include "Archivos.h"
-//#define NOM_ARCHIVO "alumnos.cvs"
 #define NOM_ARCHIVO "archivo.csv"
 
 int main()
@@ -45,9 +44,9 @@ int main()
                     MostrarElementos(ListaEmpleados,0,ListaEmpleados->len(ListaEmpleados));
                     break;
                 case 4:
-                    ListaAux=al_map(ListaEmpleados , CalculaSalario);
-                    if(ListaAux !=NULL )
-                    MostrarElementosconSalario(ListaAux,0,ListaAux->len(ListaAux));
+                    ListaAux=al_map(ListaEmpleados, CalcularSalary);
+                    if(ListaEmpleados!=NULL )
+                    MostrarElementosconSalario(ListaEmpleados,0,ListaEmpleados->len(ListaEmpleados));
                     else
                         printf("Nada para mostrar\n");
                     break;

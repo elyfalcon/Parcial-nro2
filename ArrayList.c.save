@@ -667,15 +667,14 @@ ArrayList* al_map(ArrayList *this, int (*funcion)(void*))
     ArrayList* ListaAuxiliar;
     ListaAuxiliar=al_newArrayList();
     int i;
-    if(this !=NULL)
+    if(lista !=NULL)
     {
         retorno=0;
         for(i=0;i<this->len(this);i++)
         {
           if(funcion(this->get(this,i))==1);//se lo paso a la funcion
             {
-                //ListaAuxiliar->add(this,this->get(this,i));
-                ListaAuxiliar=al_add(this,this->get(this,i));
+                ListaAuxiliar->add(lista,lista->get(lista,i));
             }//fin if
 
         }//fin for
