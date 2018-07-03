@@ -129,7 +129,9 @@ int Muestra1UnElemento(eEmpleado * emp)
     if(emp !=NULL)
     {
         retorno=0;
-        printf("%s\t%s \n",emp->nombre,emp->direccion);//agregar geters
+        //printf("%s\t%s \n",emp->nombre,emp->direccion);//agregar geters
+        printf("%s\t%s\t%d\tSueldo Total:%d \n",get_Nombre(emp),get_dire(emp),get_horas(emp), get_sueldo(emp));//agregar geters
+
 
     }
     return retorno;
@@ -140,7 +142,9 @@ int Muestra1UnElementoSalario(eEmpleado * emp)
     if(emp !=NULL)
     {
         retorno=0;
-        printf("%s\t%s\t%d \n",emp->nombre,emp->direccion,emp->sueldo);//agregar geters
+      //  printf("%s\t%s\t%d \n",emp->nombre,emp->direccion,emp->sueldo);//agregar geters
+        printf("%s\t%s\t%d\tSueldo Total:%d \n",get_Nombre(emp),get_dire(emp),get_horas(emp), get_sueldo(emp));//agregar geters
+
 
     }
     return retorno;
@@ -246,7 +250,7 @@ return retorno;
 }
 int CalcularSalary(eEmpleado* element)
 {
-    int aux;
+    int auxiliar;
     int cont=0;
     int retorno=-1;
    // eEmpleado *element;
@@ -255,14 +259,14 @@ int CalcularSalary(eEmpleado* element)
     if(element !=NULL)
     {
         retorno=0;
-        if(element->horas <=120)
+        if(element->horas >=80 && element->horas <=120)
         {
-            Empleado_setSueldo(element,(element->horas)*180);
+          auxiliar1=Empleado_setSueldo(element,(element->horas)*180);
 
         }
         if(element->horas > 120 && element->horas <= 160)
         {
-           Empleado_setSueldo(element,(element->horas)*240);
+           Empleado_setSueldo(element,((element->horas)-120)*240);
 
         }
         if(element->horas > 160 && element->horas <=240)
