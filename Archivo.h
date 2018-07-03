@@ -3,6 +3,7 @@
 
 
 int GuardarArchivoT(ArrayList* this, char nombrearchivo[]);
+int ComparaEntero(void* eEmpleadoA,void* eEmpleadoB);
 
 
 

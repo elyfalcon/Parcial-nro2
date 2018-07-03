@@ -97,7 +97,7 @@ int get_horas(eEmpleado *emp)
 }
 int get_sueldo(eEmpleado *emp)
 {
-    int long retorno;
+    int retorno;
     if(emp !=NULL)
     {
         retorno=emp->sueldo;
@@ -109,9 +109,10 @@ int GuardarArchivoT(ArrayList* this, const char* nombre)
 {
         int retorno=-1;
         int i;
+        int tamanio=0;
         if(this!=NULL)
         {
-            eEmpleado* aux;
+            eEmpleado* emp;
             FILE *f;
             f=fopen(nombre, "w");
             if(f==NULL)
@@ -120,17 +121,16 @@ int GuardarArchivoT(ArrayList* this, const char* nombre)
             }
             else
             {
-                if(aux !=NULL)
+                if(emp !=NULL)
                 {
-                int tamanio;
-                tamanio=al_len(this);
-                for (i=0; i<tamanio; i++)
-                {
-                    aux = (eEmpleado*)al_get(this, i);
-                    fprintf(f,"%d,%s,%s,%d,%d\n",get_id(aux),get_Nombre(aux),get_dire(aux),get_horas(aux),get_sueldo(aux));
+                    tamanio=al_len(this);
+                    for (i=0; i<tamanio; i++)
+                    {
+                    emp = (eEmpleado*)al_get(this, i);
+                    fprintf(f,"%d,%s,%s,%d,%d\n",get_id(emp),get_Nombre(emp),get_dire(emp),get_horas(emp),get_sueldo(emp));
                     retorno=1;
-                }//fin for
-                }//fin if(aux!=NULL)
+                    }//fin for
+                    }//fin if(aux!=NULL)
                 fclose(f);
             }//fin else
         }// fin if(!=null)
@@ -168,6 +168,23 @@ int GuardarArchivoB(ArrayList* this,char nombrearchivo[])
     return retorno;
 }
 
+int BuscaMaximo(ArrayList *this)
+{
 
+}
+int ComparaEntero(void* eEmpleadoA,void* eEmpleadoB)
+{
+    int retorno=-1;
+    if (((eEmpleado*)eEmpleadoA)->sueldo >((eEmpleado*)eEmpleadoB)->sueldo)
+    {
+      retorno=;
+    }
+        if (strcmp(((eEmpleado*)eEmpleadoA)->nombre,((eEmpleado*)eEmpleadoB)->nombre)==-1)
+    {
+      retorno=0;
 
+    }
+    return retorno;
+
+}
 

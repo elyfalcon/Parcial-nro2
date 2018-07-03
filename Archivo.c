@@ -19,7 +19,40 @@ int charToint(char* charInt)
     nro = atoi(charInt);
     return nro;
 }
+int get_id(eEmpleado* this)
+{
+    return this->id;
+}
 
+char* get_Nombre(eEmpleado* this)
+{
+    return this->nombre;
+}
+
+char* get_dire(eEmpleado* this)
+{
+    return this->direccion;
+}
+
+int get_horas(eEmpleado* this)
+{
+    return this->horas;
+}
+
+int get_sueldo(eEmpleado* this)
+{
+    return this->sueldo;
+}
+
+
+
+
+
+
+
+
+
+//-----------------------------------
 int Empleado_setId(eEmpleado* this, int dato)
 {
     if(this!=NULL && dato !=NULL)
@@ -57,7 +90,8 @@ int Empleado_setName(eEmpleado* this, const char* name)
     strcpy(this->nombre, name);
     return 0;
 }
-
+//-----------------------------------------------------
+/*
 int get_id(eEmpleado * emp)
 {
     int retorno;
@@ -68,7 +102,7 @@ int get_id(eEmpleado * emp)
 
     return retorno;
 }
-char get_Nombre(eEmpleado * emp)
+char *get_Nombre(eEmpleado * emp)
 {
     char retorno;
     if(emp !=NULL)
@@ -77,7 +111,7 @@ char get_Nombre(eEmpleado * emp)
     }
     return retorno;
 }
-char get_dire(eEmpleado * emp)
+char *get_dire(eEmpleado * emp)
 {
     char retorno;
     if(emp !=NULL)
@@ -95,23 +129,25 @@ int get_horas(eEmpleado *emp)
     }
     return retorno;
 }
+
 int get_sueldo(eEmpleado *emp)
 {
-    int long retorno;
+    int retorno;
     if(emp !=NULL)
     {
         retorno=emp->sueldo;
     }
     return retorno;
-}
+}*/
 
 int GuardarArchivoT(ArrayList* this, const char* nombre)
 {
         int retorno=-1;
         int i;
+        int tamanio=0;
         if(this!=NULL)
         {
-            eEmpleado* aux;
+            eEmpleado* emp;
             FILE *f;
             f=fopen(nombre, "w");
             if(f==NULL)
@@ -120,20 +156,31 @@ int GuardarArchivoT(ArrayList* this, const char* nombre)
             }
             else
             {
-                if(aux !=NULL)
+                if(emp !=NULL)
                 {
-                    int tamanio;
                     tamanio=al_len(this);
                     for (i=0; i<tamanio; i++)
                     {
-                    aux = (eEmpleado*)al_get(this, i);
-                    fprintf(f,"%d,%s,%s,%d,%d\n",get_id(aux),get_Nombre(aux),get_dire(aux),get_horas(aux),get_sueldo(aux));
+                    emp = (eEmpleado*)al_get(this, i);
+                    fprintf(f,"%d,%s,%s,%d,%d\n",get_id(emp),get_Nombre(emp),get_dire(emp),get_horas(emp),get_sueldo(emp));
+                   // fprintf(f,"%d,%s,%s,%d,%d\n",emp->id,emp->nombre,emp->direccion,emp->horas,emp->sueldo);
                     retorno=1;
                     }//fin for
                     }//fin if(aux!=NULL)
                 fclose(f);
             }//fin else
         }// fin if(!=null)
+        if(retorno==1)
+        {
+            printf("Se creo el archivo sueldo.csv correctamente\n");
+            system("pause");
+        }
+        else
+        {
+            printf("No se pudo crear el archivo sueldo.csv\n");
+            system("pause");
+        }
+
         return retorno;
 
 }
@@ -168,6 +215,23 @@ int GuardarArchivoB(ArrayList* this,char nombrearchivo[])
     return retorno;
 }
 
+int BuscaMaximo(ArrayList *this)
+{
 
+}
+int ComparaEntero(void* eEmpleadoA,void* eEmpleadoB)
+{
+    eEmpleado *retorno;
+    if (((eEmpleado*)eEmpleadoA)->sueldo >((eEmpleado*)eEmpleadoB)->sueldo)
+    {
+      retorno=eEmpleadoA;
+    }
+        if (((eEmpleado*)eEmpleadoA)->sueldo <((eEmpleado*)eEmpleadoB)->sueldo)
+    {
+      retorno=eEmpleadoB;
 
+    }
+    return retorno;
+
+}
 

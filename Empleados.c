@@ -129,7 +129,9 @@ int Muestra1UnElemento(eEmpleado * emp)
     if(emp !=NULL)
     {
         retorno=0;
-        printf("%s\t%s \n",emp->nombre,emp->direccion);//agregar geters
+        //printf("%s\t%s \n",emp->nombre,emp->direccion);//agregar geters
+        printf("%s\t%s\t%d\tSueldo Total:%d \n",get_Nombre(emp),get_dire(emp),get_horas(emp), get_sueldo(emp));//agregar geters
+
 
     }
     return retorno;
@@ -140,7 +142,9 @@ int Muestra1UnElementoSalario(eEmpleado * emp)
     if(emp !=NULL)
     {
         retorno=0;
-        printf("%s\t%s\t%d \n",emp->nombre,emp->direccion,emp->sueldo);//agregar geters
+      //  printf("%s\t%s\t%d \n",emp->nombre,emp->direccion,emp->sueldo);//agregar geters
+        printf("%s\t%s\t%d\tSueldo Total:%d \n",get_Nombre(emp),get_dire(emp),get_horas(emp), get_sueldo(emp));//agregar geters
+
 
     }
     return retorno;
