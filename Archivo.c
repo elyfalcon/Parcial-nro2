@@ -19,6 +19,12 @@ int charToint(char* charInt)
     nro = atoi(charInt);
     return nro;
 }
+float charToFloat(char* charFlt)
+{
+    float num;
+    num=atof(charFlt);
+    return num;
+}
 int get_id(eEmpleado* this)
 {
     return this->id;
@@ -162,7 +168,7 @@ int GuardarArchivoT(ArrayList* this, const char* nombre)
                     for (i=0; i<tamanio; i++)
                     {
                     emp = (eEmpleado*)al_get(this, i);
-                    fprintf(f,"%d,%s,%s,%d,%d\n",get_id(emp),get_Nombre(emp),get_dire(emp),get_horas(emp),get_sueldo(emp));
+                    fprintf(f,"%d,%s,%s,%d,%f\n",get_id(emp),get_Nombre(emp),get_dire(emp),get_horas(emp),get_sueldo(emp));
                    // fprintf(f,"%d,%s,%s,%d,%d\n",emp->id,emp->nombre,emp->direccion,emp->horas,emp->sueldo);
                     retorno=1;
                     }//fin for

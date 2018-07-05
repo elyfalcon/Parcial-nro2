@@ -63,7 +63,7 @@ int parserEmployee(FILE* pFile, ArrayList* this)
                     {
                         break;
                     }
-                    guardoDato = Empleado_setSueldo(record, charToint(sueldo) );
+                    guardoDato = Empleado_setSueldo(record, charToFloat(sueldo) );
 
                     guardoDato = Empleado_setHoras(record, charToint(horas) );
 
@@ -224,7 +224,7 @@ int ComparaNombre(void* eEmpleadoA,void* eEmpleadoB)
 int CalculaSalario(ArrayList *this)
 {
     int retorno=0;
-    int aux;
+    float aux;
     int opcion;
     eEmpleado *aux_emp;
     aux=aux_emp->horas;
