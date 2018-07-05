@@ -130,7 +130,7 @@ int Muestra1UnElemento(eEmpleado * emp)
     {
         retorno=0;
         //printf("%s\t%s \n",emp->nombre,emp->direccion);//agregar geters
-        printf("%s\t%s\t%d\tSueldo Total:%d \n",get_Nombre(emp),get_dire(emp),get_horas(emp), get_sueldo(emp));//agregar geters
+        printf("%s\t%s\n",get_Nombre(emp),get_dire(emp));//,get_horas(emp), get_sueldo(emp));//agregar geters
 //ver para sacarlo
 
     }
